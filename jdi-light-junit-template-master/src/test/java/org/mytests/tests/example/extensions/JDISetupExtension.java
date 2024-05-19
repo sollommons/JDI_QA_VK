@@ -15,7 +15,7 @@ import static com.epam.jdi.light.settings.WebSettings.TEST_NAME;
 import static com.epam.jdi.light.settings.WebSettings.logger;
 import static io.qameta.allure.model.Status.FAILED;
 import static io.qameta.allure.model.Status.PASSED;
-import static org.mytests.uiobjects.example.site.SiteJdi.homePage;
+import static org.mytests.uiobjects.example.site.SiteJdi.loginPage;
 
 public class JDISetupExtension implements
         BeforeAllCallback, BeforeEachCallback, AfterEachCallback {
@@ -25,7 +25,7 @@ public class JDISetupExtension implements
         extensionContext.getRoot().getStore(ExtensionContext.Namespace.GLOBAL)
                 .getOrComputeIfAbsent(DriverKiller.class);
         openSite(SiteJdi.class);
-        homePage.open();
+        loginPage.open();
         logger.info("Run Tests");
     }
 
