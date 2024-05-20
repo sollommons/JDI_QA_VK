@@ -1,7 +1,7 @@
 package org.mytests.uiobjects.example.site.pages;
 
+import com.epam.jdi.light.elements.composite.Section;
 import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import com.epam.jdi.light.elements.pageobjects.annotations.WaitAfterAction;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
@@ -10,9 +10,8 @@ import com.epam.jdi.light.ui.html.elements.common.TextField;
 import org.mytests.uiobjects.example.site.sections.LeftMenu;
 import org.mytests.uiobjects.example.site.sections.TopPanel;
 
-@Url("/groups")
-public class GroupsPage extends WebPage {
-
+@Url("/guests")
+public class GuestsPage extends WebPage {
     @UI("#hook_Block_SideNavigation " +
             "> #hook_Block_Navigation " +
             "> .navigation " +
@@ -25,6 +24,9 @@ public class GroupsPage extends WebPage {
             "> [data-l=t,navigationToolbar]")
     public TopPanel topPanel;
 
-    @XPath(".//input[@placeholder='Поиск по группам']") @WaitAfterAction(2)
+    @XPath(".//input[@placeholder='Искать друзей']") @WaitAfterAction(2)
     public TextField search;
+
+    @UI("#hook_Block_MyFriendsFriendSearchPagingB")
+    public Section myFriendsSection;
 }
