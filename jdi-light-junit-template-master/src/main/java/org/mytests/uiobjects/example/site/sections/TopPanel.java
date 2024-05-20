@@ -5,7 +5,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
 import com.epam.jdi.light.ui.html.elements.common.Link;
 
 public class TopPanel extends Section {
-    private static final String toolbarBaseXpath = ".//nav[@role='navigation']//ul//";
+    private static final String toolbarBaseXpath = "div[@data-l='t,navigationToolbar']//nav[@role='navigation']//ul//";
     @XPath(toolbarBaseXpath + "li[@data-l='t,messages']")
     public Link messages;
     @XPath(toolbarBaseXpath + "li[@data-l='t,discussions']")

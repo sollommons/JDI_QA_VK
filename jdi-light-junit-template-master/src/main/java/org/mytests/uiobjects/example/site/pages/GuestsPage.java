@@ -28,5 +28,6 @@ public class GuestsPage extends WebPage {
     public TextField search;
 
     @UI("#hook_Block_MyFriendsFriendSearchPagingB")
+    @WaitAfterAction
     public Section myFriendsSection;
 }
