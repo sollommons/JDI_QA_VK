@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.mytests.uiobjects.example.site.SiteJdi;
 
 import static com.epam.jdi.light.elements.composite.WebPage.openSite;
+import static com.epam.jdi.light.elements.init.PageFactory.initElements;
 import static com.epam.jdi.light.settings.WebSettings.logger;
 
 public class BaseTest {
@@ -14,6 +15,7 @@ public class BaseTest {
     @BeforeAll()
     static public void setUp() {
         logger.info("Running test");
+        initElements(SiteJdi.class);
         openSite(SiteJdi.class);
     }
 

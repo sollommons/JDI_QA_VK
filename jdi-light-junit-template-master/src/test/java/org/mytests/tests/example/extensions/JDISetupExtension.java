@@ -11,6 +11,7 @@ import java.lang.reflect.Method;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.elements.composite.WebPage.openSite;
+import static com.epam.jdi.light.elements.init.PageFactory.initElements;
 import static com.epam.jdi.light.settings.WebSettings.TEST_NAME;
 import static com.epam.jdi.light.settings.WebSettings.logger;
 import static io.qameta.allure.model.Status.FAILED;
@@ -25,7 +26,6 @@ public class JDISetupExtension implements
         extensionContext.getRoot().getStore(ExtensionContext.Namespace.GLOBAL)
                 .getOrComputeIfAbsent(DriverKiller.class);
         openSite(SiteJdi.class);
-        loginPage.open();
         logger.info("Run Tests");
     }
 
