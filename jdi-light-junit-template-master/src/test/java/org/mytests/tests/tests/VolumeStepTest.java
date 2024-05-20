@@ -25,7 +25,6 @@ public class VolumeStepTest extends BaseTest {
     public void volumeStepTest() {
         feedPage.musicBtn.click();
         musicPage.checkOpened();
-        volume.setupValue(16);
         assertEquals( volume.step(), 5);
     }
 }
