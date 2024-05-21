@@ -3,32 +3,28 @@ package org.mytests.uiobjects.example.site.pages;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
+import com.epam.jdi.light.elements.pageobjects.annotations.WaitAfterAction;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
-import com.epam.jdi.light.ui.html.elements.common.Button;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
 import com.epam.jdi.light.ui.html.elements.common.TextField;
 import org.mytests.uiobjects.example.site.sections.LeftMenu;
 import org.mytests.uiobjects.example.site.sections.TopPanel;
-import org.openqa.selenium.WebElement;
 
-@Url("/feed")
-public class FeedPage extends WebPage{
+@Url("/groups")
+public class GroupsPage extends WebPage {
 
-    @UI("#hook_Block_SideNavigation" +
-            "> #hook_Block_Navigation" +
-            "> .navigation" +
-            "> .nav-side")
+    @UI("#hook_Block_SideNavigation " +
+            "> #hook_Block_Navigation " +
+            "> .navigation " +
+            "> .nav-side " +
+            "> .nav-side_i-w")
     public LeftMenu leftMenu;
     @UI("#topPanel" +
             "> .toolbar" +
-            "> .toolbar_decor")
+            "> .toolbar_decor" +
+            "> [data-l=t,navigationToolbar]")
     public TopPanel topPanel;
-    @UI("[id=topPanelLeftCorner]")
-    public Button homeBtn;
 
-    @UI("#hook_Block_MainFeedsContent")
-    public WebElement mainFeedsContent;
-
-    public void checkPage(){
-        mainFeedsContent.isDisplayed();
-    }
+    @XPath(".//input[@placeholder='Поиск по группам']") @WaitAfterAction(2)
+    public TextField search;
 }

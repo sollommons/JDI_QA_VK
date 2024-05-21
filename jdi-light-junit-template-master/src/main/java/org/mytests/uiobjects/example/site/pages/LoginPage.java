@@ -12,7 +12,6 @@ import com.epam.jdi.light.ui.html.elements.common.TextField;
 public class LoginPage extends WebPage {
     @UI("[id=field_email]")
     public TextField login;
-
     @UI("[id=field_password]")
     public TextField password;
 
