@@ -20,7 +20,7 @@ public class FeedPage extends WebPage{
     public LeftMenu leftMenu;
     @UI("#topPanel" +
             "> .toolbar" +
-            "> .toolbar_decor")
+            "> .toolbar_decor > .toolbar_c")
     public TopPanel topPanel;
     @UI("[id=topPanelLeftCorner]")
     public Button homeBtn;

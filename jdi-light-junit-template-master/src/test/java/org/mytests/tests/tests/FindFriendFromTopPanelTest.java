@@ -29,10 +29,10 @@ import static org.mytests.uiobjects.example.site.SiteJdi.*;
                  .guests
                  .click();
          guestsPage.checkOpened();
+         guestsPage.search.focus();
          guestsPage.search.sendKeys(friendName);
-         guestsPage.search.press(Keys.ENTER);
-         guestsPage.myFriendsSection.show();
-         Assertions.assertTrue(guestsPage.myFriendsSection.isVisible(),
-                 "MyFriendsSection is not visible");
+         guestsPage.search.sendKeys(Keys.ENTER);
+         Assertions.assertEquals(guestsPage.noFriendsText.text(), "Не найдено ни одного друга",
+                 "Some friends have found. Critical bug.");
     }
 }

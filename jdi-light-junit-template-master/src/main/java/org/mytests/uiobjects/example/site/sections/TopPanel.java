@@ -1,11 +1,14 @@
 package org.mytests.uiobjects.example.site.sections;
 
 import com.epam.jdi.light.elements.composite.Section;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
+import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.common.Link;
+import org.openqa.selenium.WebElement;
 
 public class TopPanel extends Section {
-    private static final String toolbarBaseXpath = "div[@data-l='t,navigationToolbar']//nav[@role='navigation']//ul//";
+    private static final String toolbarBaseXpath = "nav[@role='navigation']//ul//";
     @XPath(toolbarBaseXpath + "li[@data-l='t,messages']")
     public Link messages;
     @XPath(toolbarBaseXpath + "li[@data-l='t,discussions']")
@@ -20,6 +23,7 @@ public class TopPanel extends Section {
     public Link video;
     @XPath(toolbarBaseXpath + "li[@data-l='t,music']")
     public Link music;
+
 
 
 }

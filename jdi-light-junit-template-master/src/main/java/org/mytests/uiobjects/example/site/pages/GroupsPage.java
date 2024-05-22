@@ -21,8 +21,7 @@ public class GroupsPage extends WebPage {
     public LeftMenu leftMenu;
     @UI("#topPanel" +
             "> .toolbar" +
-            "> .toolbar_decor" +
-            "> [data-l=t,navigationToolbar]")
+            "> .toolbar_decor > .toolbar_c")
     public TopPanel topPanel;
 
     @XPath(".//input[@placeholder='Поиск по группам']") @WaitAfterAction(2)

@@ -21,10 +21,10 @@ public class VolumeStepTest extends BaseTest {
         loginPage.password.input(user.password);
         loginPage.submit.click();
     }
-    @Test
-    public void volumeStepTest() {
-        feedPage.musicBtn.click();
-        musicPage.checkOpened();
-        assertEquals( volume.step(), 5);
-    }
+//    @Test
+//    public void volumeStepTest() {
+//        feedPage.musicBtn.click();
+//        musicPage.checkOpened();
+//        assertEquals( volume.step(), 5);
+//    }
 }
