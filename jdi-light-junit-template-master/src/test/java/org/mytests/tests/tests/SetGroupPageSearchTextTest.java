@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.mytests.tests.example.BaseTest;
 import org.mytests.uiobjects.example.entities.User;
 
-import static org.junit.Assert.assertTrue;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 
 public class SetGroupPageSearchTextTest extends BaseTest {
