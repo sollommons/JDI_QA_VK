@@ -1,5 +1,6 @@
 package org.mytests.tests.tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,5 +36,12 @@ public class SetGroupPageSearchTextTest extends BaseTest {
                 .setText("Text");
         Assertions.assertEquals(groupsPage.search.getText(), "Text",
                 "Text in search textField does not match entered text.");
+    }
+
+    @AfterEach
+    public void close(){
+        groupsPage.profileSettings.click();
+        groupsPage.toolBar.logoutBtn.click();
+        exitPage.confirmBtn.click();
     }
 }

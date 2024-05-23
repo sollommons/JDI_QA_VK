@@ -1,5 +1,6 @@
  package org.mytests.tests.tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,7 @@ import static org.mytests.uiobjects.example.site.SiteJdi.*;
          loginPage.submit.click();
      }
      @Test
-     public void loginTest() {
+     public void findFriend() {
          feedPage
                  .topPanel
                  .guests
@@ -35,4 +36,10 @@ import static org.mytests.uiobjects.example.site.SiteJdi.*;
          Assertions.assertEquals(guestsPage.noFriendsText.text(), "Не найдено ни одного друга",
                  "Some friends have found. Critical bug.");
     }
+     @AfterEach
+     public void close(){
+         guestsPage.profileSettings.click();
+         guestsPage.toolBar.logoutBtn.click();
+         exitPage.confirmBtn.click();
+     }
 }

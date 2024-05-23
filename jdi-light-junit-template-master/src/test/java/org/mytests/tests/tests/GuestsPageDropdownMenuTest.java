@@ -1,5 +1,6 @@
  package org.mytests.tests.tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,15 @@ import static org.mytests.uiobjects.example.site.SiteJdi.*;
      @Test
      public void guestsPageDropdownMenuTest() {
          feedPage.topPanel.guests.click();
-         guestsPage.open();
+         guestsPage.checkOpened();
+         guestsPage.friendsMenuMoreBtn.click();
          Assertions.assertTrue(guestsPage.friendsMenuDropdown.isVisible());
     }
+
+     @AfterEach
+     public void close(){
+         guestsPage.profileSettings.click();
+         guestsPage.toolBar.logoutBtn.click();
+         exitPage.confirmBtn.click();
+     }
 }

@@ -12,6 +12,7 @@ import com.epam.jdi.light.ui.html.elements.common.Text;
 import com.epam.jdi.light.ui.html.elements.common.TextField;
 import org.mytests.uiobjects.example.site.sections.LeftMenu;
 import org.mytests.uiobjects.example.site.sections.TopPanel;
+import org.mytests.uiobjects.example.site.sections.UserToolBar;
 
 @Url("/guests")
 public class GuestsPage extends WebPage {
@@ -21,11 +22,20 @@ public class GuestsPage extends WebPage {
             "> .nav-side " +
             "> .nav-side_i-w")
     public LeftMenu leftMenu;
+
     @UI("#topPanel" +
             "> .toolbar" +
             "> .toolbar_decor" +
             "> [data-l=t,navigationToolbar]")
     public TopPanel topPanel;
+
+    @UI("#user-dropdown-menu " +
+            "> .toolbar_accounts-items " +
+            "> div")
+    public UserToolBar toolBar;
+
+    @XPath("//button[@aria-label='Настройки профиля']")
+    public Button profileSettings;
 
     @XPath(".//input[@placeholder='Искать друзей']") @WaitAfterAction(2)
     public TextField search;
